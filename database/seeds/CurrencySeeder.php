@@ -35,7 +35,7 @@ class CurrencySeeder extends Seeder
             [
                 'id' => 2,
                 'title' => 'Euro',
-                'symbol_left' => '€',
+                'symbol_left' => '￥',
                 'symbol_right' => '',
                 'code' => 'EUR',
                 'decimal_place' => 2,

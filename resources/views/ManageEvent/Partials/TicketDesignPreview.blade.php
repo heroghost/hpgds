@@ -33,7 +33,7 @@
         <h4>参加者编号.</h4>
         #YLY9U73-1
         <h4>价格</h4>
-        €XX.XX
+        ￥XX.XX
     </div>
 
     <div class="barcode">

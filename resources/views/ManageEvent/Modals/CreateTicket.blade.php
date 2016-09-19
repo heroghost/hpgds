@@ -6,13 +6,13 @@
                 <button type="button" class="close" data-dismiss="modal">×</button>
                 <h3 class="modal-title">
                     <i class="ico-ticket"></i>
-                    Create Ticket</h3>
+                    创建门票</h3>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            {!! Form::label('title', 'Ticket Title', array('class'=>'control-label required')) !!}
+                            {!! Form::label('title', '门票标题', array('class'=>'control-label required')) !!}
                             {!!  Form::text('title', Input::old('title'),
                                         array(
                                         'class'=>'form-control',
@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    {!! Form::label('price', 'Ticket Price', array('class'=>'control-label required')) !!}
+                                    {!! Form::label('price', '门票价格', array('class'=>'control-label required')) !!}
                                     {!!  Form::text('price', Input::old('price'),
                                                 array(
                                                 'class'=>'form-control',
@@ -36,7 +36,7 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    {!! Form::label('quantity_available', 'Quantity Available', array('class'=>' control-label')) !!}
+                                    {!! Form::label('quantity_available', '可用数量', array('class'=>' control-label')) !!}
                                     {!!  Form::text('quantity_available', Input::old('quantity_available'),
                                                 array(
                                                 'class'=>'form-control',
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group more-options">
-                            {!! Form::label('description', 'Ticket Description', array('class'=>'control-label')) !!}
+                            {!! Form::label('description', '门票描述', array('class'=>'control-label')) !!}
                             {!!  Form::text('description', Input::old('description'),
                                         array(
                                         'class'=>'form-control'
@@ -59,7 +59,7 @@
                         <div class="row more-options">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    {!! Form::label('start_sale_date', 'Start Sale On', array('class'=>' control-label')) !!}
+                                    {!! Form::label('start_sale_date', '开始销售', array('class'=>' control-label')) !!}
                                     {!!  Form::text('start_sale_date', Input::old('start_sale_date'),
                                                     [
                                                 'class'=>'form-control start hasDatepicker ',
@@ -74,7 +74,7 @@
 
                             <div class="col-sm-6 ">
                                 <div class="form-group">
-                                    {!!  Form::label('end_sale_date', 'End Sale On',
+                                    {!!  Form::label('end_sale_date', '结束销售',
                                                 [
                                             'class'=>' control-label '
                                         ])  !!}
@@ -93,13 +93,13 @@
                         <div class="row more-options">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {!! Form::label('min_per_person', 'Minimum Tickets Per Order', array('class'=>' control-label')) !!}
+                                    {!! Form::label('min_per_person', '订单最小票数', array('class'=>' control-label')) !!}
                                     {!! Form::selectRange('min_per_person', 1, 100, 1, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {!! Form::label('max_per_person', 'Maximum Tickets Per Order', array('class'=>' control-label')) !!}
+                                    {!! Form::label('max_per_person', '订单最大票数', array('class'=>' control-label')) !!}
                                     {!! Form::selectRange('max_per_person', 1, 100, 30, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
 
                     <div class="col-md-12">
                         <a href="javascript:void(0);" class="show-more-options">
-                            More Options
+                            更多选项
                         </a>
                     </div>
 
@@ -116,8 +116,8 @@
 
             </div> <!-- /end modal body-->
             <div class="modal-footer">
-               {!! Form::button('Cancel', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
-               {!! Form::submit('Create Ticket', ['class'=>"btn btn-success"]) !!}
+               {!! Form::button('取消', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
+               {!! Form::submit('创建门票', ['class'=>"btn btn-success"]) !!}
             </div>
         </div><!-- /end modal content-->
        {!! Form::close() !!}

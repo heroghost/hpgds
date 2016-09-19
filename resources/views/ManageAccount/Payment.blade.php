@@ -2,11 +2,11 @@
 
 @section('title')
 @parent
-Event Attendees
+活动参与者
 @stop
 
 
 @section('page_title')
 <i class="ico-users"></i>
-Account / Payment
+账号 / 支付
 @stop
