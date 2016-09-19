@@ -15,12 +15,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">
                     <i class="ico-question"></i>
-                    Create Question</h3>
+                    创建问题</h3>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label for="question-title" class="required">
-                        Question
+                        问题
                     </label>
                     {!! Form::text('title', '', [
                         'id' => 'question-title',
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="question-type">
-                        Question Type
+                        问题类型
                     </label>
 
                     <select id="question-type" class="form-control" name="question_type_id"
@@ -45,7 +45,7 @@
 
 
                 <fieldset id="question-options" class="hide">
-                    <h4>Question Options</h4>
+                    <h4>问题选项</h4>
                     <table class="table table-bordered table-condensed">
                         <tbody>
                         <tr>
@@ -61,7 +61,7 @@
                                            <span id="add-question-option" class="btn btn-success btn-xs"
                                                  onclick="addQuestionOption();">
                                                <i class="ico-plus"></i>
-                                               Add another option
+                                               添加其他选项
                                            </span>
                             </td>
                         </tr>
@@ -72,12 +72,12 @@
                 <div class="form-group">
                     <div class="custom-checkbox">
                         {!! Form::checkbox('is_required', 'yes', false, ['data-toggle' => 'toggle', 'id' => 'is_required']) !!}
-                        {!! Form::label('is_required', 'Make this a required question') !!}
+                        {!! Form::label('is_required', '设置必答') !!}
                     </div>
                 </div>
 
                 <h4>
-                    Require this question for ticket(s):
+                    购票必答:
                 </h4>
                 <div class="form-group">
 
@@ -92,8 +92,8 @@
 
             </div> <!-- /end modal body-->
             <div class="modal-footer">
-                {!! Form::button('Cancel', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
-                {!! Form::submit('Save Question', ['class'=>"btn btn-success"]) !!}
+                {!! Form::button('取消', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
+                {!! Form::submit('保存问题', ['class'=>"btn btn-success"]) !!}
             </div>
         </div><!-- /end modal content-->
     </div>

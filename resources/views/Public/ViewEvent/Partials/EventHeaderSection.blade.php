@@ -2,7 +2,7 @@
 <section id="goLiveBar">
     <div class="container">
                 @if(!$event->is_live)
-                This event is not visible to the public - <a style="background-color: green; border-color: green;" class="btn btn-success btn-xs" href="{{route('MakeEventLive' , ['event_id' => $event->id])}}" >Publish Event</a>
+                这个活动不能对外销售 - <a style="background-color: green; border-color: green;" class="btn btn-success btn-xs" href="{{route('MakeEventLive' , ['event_id' => $event->id])}}" >公开活动</a>
                 @endif
     </div>
 </section>
@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div onclick="window.location='{{$event->event_url}}#organiser'" class="event_organizer">
-                    <b>{{$event->organiser->name}}</b> Presents
+                    <b>{{$event->organiser->name}}</b> 目前
                 </div>
             </div>
         </div>
@@ -44,13 +44,13 @@
             <div class="event_buttons">
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
-                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#tickets">TICKETS</a>
+                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#tickets">门票</a>
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#details">DETAILS</a>
+                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#details">详情</a>
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#location">LOCATION</a>
+                        <a class="btn btn-event-link btn-lg" href="{{{$event->event_url}}}#location">位置</a>
                     </div>
                 </div>
             </div>

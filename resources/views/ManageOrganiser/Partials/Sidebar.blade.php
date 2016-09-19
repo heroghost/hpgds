@@ -15,6 +15,12 @@
                     <span class="text">活动</span>
                 </a>
             </li>
+            <li class="{{ Request::is('*settlement*') ? 'active' : '' }}">
+                <a href="{{route('showOrganiserEvents', array('organiser_id' => $organiser->id))}}">
+                    <span class="figure"><i class="ico-calendar"></i></span>
+                    <span class="text">结算</span>
+                </a>
+            </li>
 
             <li class="{{ Request::is('*customize*') ? 'active' : '' }}">
                 <a href="{{route('showOrganiserCustomize', array('organiser_id' => $organiser->id))}}">

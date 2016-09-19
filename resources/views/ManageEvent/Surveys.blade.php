@@ -146,7 +146,7 @@
                                 问题标题
                             </th>
                             <th>
-                                需求
+                                是否必答
                             </th>
                             <th>
                                 状态
@@ -173,10 +173,10 @@
                                               class="muted">门票: {{implode(', ', array_column($question->tickets->toArray(), 'title'))}}</span>
                                     </td>
                                     <td>
-                                        {{ $question->is_required ? 'Yes' : 'No' }}
+                                        {{ $question->is_required ? '是' : '否' }}
                                     </td>
                                     <td>
-                                        <span class="label label-{{ $question->is_enabled ? 'info' : 'warning' }}">{{ $question->is_enabled ? 'Enabled' : 'Disabled' }}</span>
+                                        <span class="label label-{{ $question->is_enabled ? 'info' : 'warning' }}">{{ $question->is_enabled ? '已激活' : '未激活' }}</span>
                                     </td>
                                     <td>
                                         <a class="loadModal" data-modal-id="showEventQuestionAnswers"
@@ -202,7 +202,7 @@
                                            data-route="{{ route('postEnableQuestion', ['event_id' => $event->id, 'question_id' => $question->id]) }}"
                                            data-id="{{ $question->id }}"
                                         >
-                                            {{ $question->is_enabled ? 'Disable' : 'Enable' }}
+                                            {{ $question->is_enabled ? '取消' : '激活' }}
                                         </a>
                                         <a data-id="{{ $question->id }}"
                                            title="All answers will also be deleted. If you want to keep attendee's answers you should deactivate the question instead."

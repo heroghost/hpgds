@@ -1,7 +1,7 @@
 <section id='order_form' class="container">
     <div class="row">
         <h1 class="section_head">
-            Order Details
+            订单详情
         </h1>
     </div>
     <div class="row">
@@ -10,7 +10,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         <i class="ico-cart mr5"></i>
-                        Order Summary
+                        订单总结
                     </h3>
                 </div>
 
@@ -21,7 +21,7 @@
                             <td class="pl0">{{{$ticket['ticket']['title']}}} X <b>{{$ticket['qty']}}</b></td>
                             <td style="text-align: right;">
                                 @if((int)ceil($ticket['full_price']) === 0)
-                                FREE
+                                免费
                                 @else
                                 {{ money($ticket['full_price'], $event->currency) }}
                                 @endif
@@ -33,7 +33,7 @@
                 @if($order_total > 0)
                 <div class="panel-footer">
                     <h5>
-                        Total: <span style="float: right;"><b>{{ money($order_total + $total_booking_fee,$event->currency) }}</b></span>
+                        总计: <span style="float: right;"><b>{{ money($order_total + $total_booking_fee,$event->currency) }}</b></span>
                     </h5>
                 </div>
                 @endif
@@ -49,18 +49,18 @@
 
                 {!! Form::hidden('event_id', $event->id) !!}
 
-                <h3>Your Information</h3>
+                <h3>你的信息</h3>
 
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="form-group">
-                            {!! Form::label("order_first_name", 'First Name') !!}
+                            {!! Form::label("order_first_name", '名') !!}
                             {!! Form::text("order_first_name", null, ['required' => 'required', 'class' => 'form-control']) !!}
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="form-group">
-                            {!! Form::label("order_last_name", 'Last Name') !!}
+                            {!! Form::label("order_last_name", '姓') !!}
                             {!! Form::text("order_last_name", null, ['required' => 'required', 'class' => 'form-control']) !!}
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            {!! Form::label("order_email", 'Email') !!}
+                            {!! Form::label("order_email", '邮箱') !!}
                             {!! Form::text("order_email", null, ['required' => 'required', 'class' => 'form-control']) !!}
                         </div>
                     </div>
@@ -77,14 +77,14 @@
 
                 <div class="p20 pl0">
                     <a href="javascript:void(0);" class="btn btn-primary btn-xs" id="mirror_buyer_info">
-                        Copy buyer details to all ticket holders
+                        复制购买者详情到所有的持票人
                     </a>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="ticket_holders_details" >
-                            <h3>Ticket Holder Information</h3>
+                            <h3>持票人信息</h3>
                             <?php
                                 $total_attendee_increment = 0;
                             ?>
@@ -94,20 +94,20 @@
 
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
-                                            <b>{{$ticket['ticket']['title']}}</b>: Ticket Holder {{$i+1}} Details
+                                            <b>{{$ticket['ticket']['title']}}</b>: 持票人 {{$i+1}} 人详情
                                         </h3>
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    {!! Form::label("ticket_holder_first_name[{$i}][{$ticket['ticket']['id']}]", 'First Name') !!}
+                                                    {!! Form::label("ticket_holder_first_name[{$i}][{$ticket['ticket']['id']}]", '名') !!}
                                                     {!! Form::text("ticket_holder_first_name[{$i}][{$ticket['ticket']['id']}]", null, ['required' => 'required', 'class' => "ticket_holder_first_name.$i.{$ticket['ticket']['id']} ticket_holder_first_name form-control"]) !!}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    {!! Form::label("ticket_holder_last_name[{$i}][{$ticket['ticket']['id']}]", 'Last Name') !!}
+                                                    {!! Form::label("ticket_holder_last_name[{$i}][{$ticket['ticket']['id']}]", '姓') !!}
                                                     {!! Form::text("ticket_holder_last_name[{$i}][{$ticket['ticket']['id']}]", null, ['required' => 'required', 'class' => "ticket_holder_last_name.$i.{$ticket['ticket']['id']} ticket_holder_last_name form-control"]) !!}
                                                 </div>
                                             </div>
@@ -115,7 +115,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    {!! Form::label("ticket_holder_email[{$i}][{$ticket['ticket']['id']}]", 'Email Address') !!}
+                                                    {!! Form::label("ticket_holder_email[{$i}][{$ticket['ticket']['id']}]", '邮箱地址') !!}
                                                     {!! Form::text("ticket_holder_email[{$i}][{$ticket['ticket']['id']}]", null, ['required' => 'required', 'class' => "ticket_holder_email.$i.{$ticket['ticket']['id']} ticket_holder_email form-control"]) !!}
                                                 </div>
                                             </div>
@@ -147,11 +147,11 @@
                     <div class="offline_payment_toggle">
                         <div class="custom-checkbox">
                             <input data-toggle="toggle" id="pay_offline" name="pay_offline" type="checkbox" value="1">
-                            <label for="pay_offline">Pay using offline method</label>
+                            <label for="pay_offline">使用线下支付方式</label>
                         </div>
                     </div>
                     <div class="offline_payment" style="display: none;">
-                        <h5>Offline Payment Instructions</h5>
+                        <h5>线下支付介绍</h5>
                         <div class="well">
                             {!! Markdown::parse($event->offline_payment_instructions) !!}
                         </div>
@@ -165,7 +165,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    {!! Form::label('card-number', 'Card Number') !!}
+                                    {!! Form::label('card-number', '银行卡号') !!}
                                     <input required="required" name="card-number" type="text" autocomplete="off" placeholder="**** **** **** ****" class="form-control card-number" size="20" data-stripe="number">
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="form-group">
-                                    {!! Form::label('card-expiry-month', 'Exipry Month') !!}
+                                    {!! Form::label('card-expiry-month', '过期月份') !!}
                                     {!!  Form::selectRange('card-expiry-month',1,12,null, [
                                             'class' => 'form-control card-expiry-month',
                                             'data-stripe' => 'exp_month'
@@ -182,7 +182,7 @@
                             </div>
                             <div class="col-xs-6">
                                 <div class="form-group">
-                                    {!! Form::label('card-expiry-year', 'Exipry Year') !!}
+                                    {!! Form::label('card-expiry-year', '过期年份') !!}
                                     {!!  Form::selectRange('card-expiry-year',date('Y'),date('Y')+10,null, [
                                             'class' => 'form-control card-expiry-year',
                                             'data-stripe' => 'exp_year'
@@ -192,7 +192,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    {!! Form::label('card-expiry-year', 'CVC Number') !!}
+                                    {!! Form::label('card-expiry-year', 'CVC 号') !!}
                                     <input required="required" name="card-cvc" placeholder="***" class="form-control card-cvc" data-stripe="cvc">
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                 @endif
 
                {!! Form::hidden('is_embedded', $is_embedded) !!}
-               {!! Form::submit('Checkout', ['class' => 'btn btn-lg btn-success card-submit', 'style' => 'width:100%;']) !!}
+               {!! Form::submit('结账', ['class' => 'btn btn-lg btn-success card-submit', 'style' => 'width:100%;']) !!}
 
             </div>
         </div>

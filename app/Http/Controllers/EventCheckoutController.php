@@ -316,7 +316,7 @@ class EventCheckoutController extends Controller
             }
 
             try {
-
+var_dump($ticket_order['payment_gateway']);exit;
                 $gateway = Omnipay::create($ticket_order['payment_gateway']->name);
 
                 $gateway->initialize($ticket_order['account_payment_gateway']->config + [
