@@ -29,13 +29,13 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">
                     <i class="ico-cart2"></i>
-                    Cancel Order: <b>#{{$order->order_reference}}</b></h3>
+                    取消订单：<b>#{{$order->order_reference}}</b></h3>
             </div>
             <div class="modal-body">
 
                 @if($attendees->count())
                     <div class="help-block">
-                        Select any attendee tickets you wish to cancel.
+                        请选择退款者的门票。
                     </div>
 
                     <div class="well bgcolor-white p0">
@@ -59,7 +59,7 @@
                                         </div>
                                     </td>
                                     <td colspan="3">
-                                        Select All
+                                        全选
                                     </td>
                                 </tr>
                                 @foreach($attendees as $attendee)
@@ -89,7 +89,7 @@
 
                 @else
                     <div class="alert alert-info cancelOrderOption">
-                        All attendees in this order have been cancelled.
+                        这个订单的所有参与者都被取消了！
                     </div>
                 @endif
 
@@ -104,7 +104,7 @@
                                 <div class="checkbox">
                                     <label>
                                         {!!Form::checkbox('refund_order', 'on')!!}
-                                        Refund this order?
+                                        确认退款！
                                     </label>
                                 </div>
                             </div>
@@ -119,11 +119,10 @@
                                             </div>
                                         </div>
                                         <div class="col-md-11">
-                                            <b>Issue full refund</b>
+                                            <b>全额退款</b>
 
                                             <div class="help-text">
-                                                Refund the
-                                                entire {{(money($order->organiser_amount - $order->amount_refunded, $order->event->currency))}}
+                                                全额退款：{{(money($order->organiser_amount - $order->amount_refunded, $order->event->currency))}}
                                             </div>
                                         </div>
                                     </div>
@@ -137,12 +136,12 @@
                                             </div>
                                         </div>
                                         <div class="col-md-11">
-                                            <b>Issue partial refund</b>
+                                            <b>部分退款</b>
 
                                             <div class="refund_amount">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        Refund amount:
+                                                        退款金额：
                                                     </div>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="refund_amount" class="form-control"
@@ -160,15 +159,14 @@
                     @else
 
                         <div class="alert alert-info">
-                            All {{money($order->amount, $order->event->currency)}} of this order has been
-                            refunded.
+                            {{money($order->amount, $order->event->currency)}} 的订单已经退款
                         </div>
 
                     @endif
                 </div>
                         @else
                         <div class="alert alert-info">
-                            Sorry, you can't refund <b>{{ $order->payment_gateway->provider_name }}</b> payments here. You will have to do it on their website.
+                            对不起，你不能 <b>{{ $order->payment_gateway->provider_name }}</b> 在这里退款。你将不得不在他们的网站上做。
                         </div>
                         @endif
 
@@ -178,8 +176,8 @@
 
             @if($attendees->count() || !$order->is_refunded)
                 <div class="modal-footer">
-                    {!! Form::button('Cancel', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
-                    {!! Form::submit('Confirm Order Cancel', ['class'=>"btn btn-primary"]) !!}
+                    {!! Form::button('取消', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
+                    {!! Form::submit('确认取消订单', ['class'=>"btn btn-primary"]) !!}
                 </div>
             @endif
         </div>

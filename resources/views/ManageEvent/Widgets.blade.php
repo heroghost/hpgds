@@ -1,9 +1,8 @@
 @extends('Shared.Layouts.Master')
 
 @section('title')
-@parent
-
-Event Widgets
+    @parent
+    活动调查
 @stop
 
 @section('top_nav')

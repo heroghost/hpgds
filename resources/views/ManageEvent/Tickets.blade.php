@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-md-3 col-xs-6">
                 <div class='order_options'>
-                    <span class="event_count">{{$tickets->count()}} 活动</span>
+                    <span class="event_count">{{$tickets->count()}} 活动数目</span>
                 </div>
             </div>
             <div class="col-md-2 col-xs-6 col-md-offset-7">
@@ -142,7 +142,7 @@
                                                 {{ ($ticket->quantity_available === null) ? '&infin;' : $ticket->quantity_remaining }}
                                             </h4>
 
-                                            <p class="nm text-muted"></p>
+                                            <p class="nm text-muted">总数目</p>
                                         </div>
                                     </li>
                                     <li>
@@ -153,7 +153,7 @@
                                                 <sub title="Doesn't account for refunds.">*</sub>
                                             </h4>
 
-                                            <p class="nm text-muted">Revenue</p>
+                                            <p class="nm text-muted">收入</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -161,21 +161,21 @@
                             <div class="panel-footer sortHandle" style="height: 56px;">
                                 <ul class="nav nav-section nav-justified">
                                     <li>
-                                        <a href="javascript:void(0);">
+                                        <a href="javascript:void(0);" style="cursor: move;">
                                             @if($ticket->sale_status === config('attendize.ticket_status_on_sale'))
                                                 @if($ticket->is_paused)
-                                                    Ticket Sales Paused &nbsp;
-                                                    <span class="pauseTicketSales label label-info"
+                                                    暂停门票售卖 &nbsp;
+                                                    <span class="pauseTicketSales label label-info"  style="cursor: auto;"
                                                           data-id="{{$ticket->id}}"
                                                           data-route="{{route('postPauseTicket', ['event_id'=>$event->id])}}">
-                                    <i class="ico-play4"></i> Resume
+                                    <i class="ico-play4"></i> 启动
                                 </span>
                                                 @else
-                                                    On Sale &nbsp;
-                                                    <span class="pauseTicketSales label label-info"
+                                                    售卖中 &nbsp;
+                                                    <span class="pauseTicketSales label label-info"  style="cursor: auto;"
                                                           data-id="{{$ticket->id}}"
                                                           data-route="{{route('postPauseTicket', ['event_id'=>$event->id])}}">
-                                    <i class="ico-pause"></i> Pause
+                                    <i class="ico-pause"></i> 暂停
                                 </span>
                                                 @endif
                                             @else

@@ -2,7 +2,7 @@
 
 @section('title')
     @parent
-    Dashboard
+    数据分析
 @stop
 
 
@@ -10,7 +10,7 @@
     @include('ManageEvent.Partials.TopNav')
 @stop
 
-@section('page_title', '<i class="ico-home2"></i>&nbsp;活动仪表板')
+@section('page_title', '<i class="ico-home2"></i>&nbsp;数据分析')
 
 @section('menu')
     @include('ManageEvent.Partials.Sidebar')
@@ -40,25 +40,25 @@
         <div class="col-sm-3">
             <div class="stat-box">
                 <h3>{{ money($event->sales_volume + $event->organiser_fees_volume, $event->currency) }}</h3>
-                <span>销售金额</span>
+                <span>销售额</span>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="stat-box">
                 <h3>{{ $event->orders->count() }}</h3>
-                <span>订单</span>
+                <span>订单数目</span>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="stat-box">
                 <h3>{{ $event->tickets->sum('quantity_sold') }}</h3>
-                <span>售票</span>
+                <span>销售量</span>
             </div>
         </div>
         <div class="col-sm-3">
             <div class="stat-box">
                 <h3>{{ $event->stats->sum('views') }}</h3>
-                <span>活动视图</span>
+                <span>活跃度</span>
             </div>
         </div>
 
@@ -79,7 +79,7 @@
                     <div class="panel">
                         <div class="panel-heading panel-default">
                             <h3 class="panel-title">
-                                售票
+                                销售量
                         <span style="color: green; float: right;">
                             {{$event->tickets->sum('quantity_sold')}} 总计
                         </span>
@@ -96,7 +96,7 @@
                     <div class="panel">
                         <div class="panel-heading panel-default">
                             <h3 class="panel-title">
-                                售票金额
+                                销售额
                                 <span style="color: green; float: right;">
                                     {{money($event->sales_volume + $event->organiser_fees_volume, $event->currency)}}
                                     总计
@@ -119,7 +119,7 @@
                     <div class="panel">
                         <div class="panel-heading panel-default">
                             <h3 class="panel-title">
-                                活动页面访问
+                                浏览量
                                 <span style="color: green; float: right;">
                                     {{$event->stats->sum('views')}} 总计
                                 </span>
@@ -136,7 +136,7 @@
                     <div class="panel">
                         <div class="panel-heading panel-default">
                             <h3 class="panel-title">
-                                门票登记
+                                门票销量
                             </h3>
                         </div>
                         <div class="panel-body">
@@ -164,7 +164,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         <i class="ico-link mr5 ellipsis"></i>
-                        活动URL
+                        活动链接
                     </h3>
                 </div>
 
@@ -336,7 +336,7 @@
             data: chartData,
             xkey: 'date',
             ykeys: ['sales_volume'],
-            labels: ['Sales Volume'],
+            labels: ['销售额'],
             xLabels: 'day',
             xLabelAngle: 30,
             yLabelFormat: function (x) {
@@ -353,7 +353,7 @@
             //ykeys: ['views', 'unique_views'],
             //labels: ['Event Page Views', 'Unique views'],
             ykeys: ['views'],
-            labels: ['Event Page Views'],
+            labels: ['浏览量'],
             xLabels: 'day',
             xLabelAngle: 30,
             xLabelFormat: function (x) {
@@ -365,7 +365,7 @@
             data: chartData,
             xkey: 'date',
             ykeys: ['tickets_sold'],
-            labels: ['Tickets sold'],
+            labels: ['销售量'],
             xLabels: 'day',
             xLabelAngle: 30,
             lineColors: ['#0390b5', '#0066ff'],

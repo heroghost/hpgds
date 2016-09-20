@@ -16,7 +16,7 @@
                             {!!  Form::text('title', Input::old('title'),
                                         array(
                                         'class'=>'form-control',
-                                        'placeholder'=>'E.g: General Admission'
+                                        'placeholder'=>'例如：最低入场票价'
                                         ))  !!}
                         </div>
 
@@ -27,7 +27,7 @@
                                     {!!  Form::text('price', Input::old('price'),
                                                 array(
                                                 'class'=>'form-control',
-                                                'placeholder'=>'E.g: 25.99'
+                                                'placeholder'=>'例如：25.99'
                                                 ))  !!}
 
 
@@ -40,7 +40,7 @@
                                     {!!  Form::text('quantity_available', Input::old('quantity_available'),
                                                 array(
                                                 'class'=>'form-control',
-                                                'placeholder'=>'E.g: 100 (Leave blank for unlimited)'
+                                                'placeholder'=>'例如：100 (Leave blank for unlimited)'
                                                 )
                                                 )  !!}
                                 </div>
@@ -59,7 +59,7 @@
                         <div class="row more-options">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    {!! Form::label('start_sale_date', '开始销售', array('class'=>' control-label')) !!}
+                                    {!! Form::label('start_sale_date', '开始售卖时间', array('class'=>' control-label')) !!}
                                     {!!  Form::text('start_sale_date', Input::old('start_sale_date'),
                                                     [
                                                 'class'=>'form-control start hasDatepicker ',
@@ -74,7 +74,7 @@
 
                             <div class="col-sm-6 ">
                                 <div class="form-group">
-                                    {!!  Form::label('end_sale_date', '结束销售',
+                                    {!!  Form::label('end_sale_date', '结束售卖时间',
                                                 [
                                             'class'=>' control-label '
                                         ])  !!}

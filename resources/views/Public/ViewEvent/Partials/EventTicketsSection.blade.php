@@ -101,7 +101,7 @@
                                     </div>
 
                                 @endif
-                                {!!Form::submit('Register', ['class' => 'btn btn-lg btn-primary pull-right'])!!}
+                                {!!Form::submit('登记', ['class' => 'btn btn-lg btn-primary pull-right'])!!}
                             </td>
                         </tr>
                     </table>

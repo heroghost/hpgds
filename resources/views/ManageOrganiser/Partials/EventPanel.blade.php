@@ -15,10 +15,9 @@
                 </a>
             </li>
             <li class="event-organiser">
-                By <a href='{{route('showOrganiserDashboard', ['organiser_id' => $event->organiser->id])}}'>{{{$event->organiser->name}}}</a>
+                创建者 <a href='{{route('showOrganiserDashboard', ['organiser_id' => $event->organiser->id])}}'>{{{$event->organiser->name}}}</a>
             </li>
         </ul>
-
     </div>
 
     <div class="panel-body">

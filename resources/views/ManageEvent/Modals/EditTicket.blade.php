@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal">×</button>
                 <h3 class="modal-title">
                     <i class="ico-ticket"></i>
-                    编辑门票: <em>{{$ticket->title}}</em></h3>
+                    编辑门票：<em>{{$ticket->title}}</em></h3>
             </div>
             <div class="modal-body">
                 <div class="form-group">

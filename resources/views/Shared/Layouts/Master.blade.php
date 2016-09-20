@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-              _   _                 _ _
-         /\  | | | |               | (_)
-        /  \ | |_| |_ ___ _ __   __| |_ _______   ___ ___  _ __ ___
-       / /\ \| __| __/ _ \ '_ \ / _` | |_  / _ \ / __/ _ \| '_ ` _ \
-      / ____ \ |_| ||  __/ | | | (_| | |/ /  __/| (_| (_) | | | | | |
-     /_/    \_\__|\__\___|_| |_|\__,_|_/___\___(_)___\___/|_| |_| |_|
-
-    -->
     <title>
         @section('title')
             景区宝 ::
@@ -59,17 +50,16 @@
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <a href="{{route('showCreateOrganiser')}}">
-                            <i class="ico ico-plus"></i>
+                            <i class="icon ico-plus"></i>
                             创建组织者
                         </a>
                     </li>
                     @foreach($organisers as $org)
                         <li>
                             <a href="{{route('showOrganiserDashboard', ['organiser_id' => $org->id])}}">
-                                <i class="ico ico-building"></i> &nbsp;
+                                <i class="icon ico-building"></i>
                                 {{$org->name}}
                             </a>
-
                         </li>
                     @endforeach
                     <li class="divider"></li>

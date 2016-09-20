@@ -22,10 +22,10 @@ class EventTicketsController extends MyBaseController
     public function showTickets(Request $request, $event_id)
     {
         $allowed_sorts = [
-            'created_at' => 'Creation date',
-            'title' => 'Ticket title',
-            'quantity_sold' => 'Quantity sold',
-            'sales_volume' => 'Sales volume',
+            'created_at' => '创建日期',
+            'title' => '门票名称',
+            'quantity_sold' => '销售量',
+            'sales_volume' => '销售额',
         ];
 
         // Getting get parameters.
@@ -114,7 +114,7 @@ class EventTicketsController extends MyBaseController
         return response()->json([
             'status'      => 'success',
             'id'          => $ticket->id,
-            'message'     => 'Refreshing...',
+            'message'     => '恢复中..',
             'redirectUrl' => route('showEventTickets', [
                 'event_id' => $event_id,
             ]),
@@ -138,7 +138,7 @@ class EventTicketsController extends MyBaseController
         if ($ticket->save()) {
             return response()->json([
                 'status'  => 'success',
-                'message' => 'Ticket Successfully Updated',
+                'message' => '门票已成功更新',
                 'id'      => $ticket->id,
             ]);
         }
@@ -172,7 +172,7 @@ class EventTicketsController extends MyBaseController
         if ($ticket->quantity_sold > 0) {
             return response()->json([
                 'status'  => 'error',
-                'message' => 'Sorry, you can\'t delete this ticket as some have already been sold',
+                'message' => '对不起，你不能删除这张票，因为一些已经售出！',
                 'id'      => $ticket->id,
             ]);
         }
@@ -180,7 +180,7 @@ class EventTicketsController extends MyBaseController
         if ($ticket->delete()) {
             return response()->json([
                 'status'  => 'success',
-                'message' => 'Ticket Successfully Deleted',
+                'message' => '成功删除门票',
                 'id'      => $ticket->id,
             ]);
         }
@@ -192,7 +192,7 @@ class EventTicketsController extends MyBaseController
         return response()->json([
             'status'  => 'error',
             'id'      => $ticket->id,
-            'message' => 'Whoops! Looks like something went wrong. Please try again.',
+            'message' => '客官！看起来好像出了什么问题。请再试一次。',
         ]);
     }
 
@@ -238,7 +238,7 @@ class EventTicketsController extends MyBaseController
         return response()->json([
             'status'      => 'success',
             'id'          => $ticket->id,
-            'message'     => 'Refreshing...',
+            'message'     => '恢复中..',
             'redirectUrl' => route('showEventTickets', [
                 'event_id' => $event_id,
             ]),

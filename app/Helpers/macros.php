@@ -42,7 +42,7 @@ Form::macro('styledFile', function ($name, $multiple = false) {
         <div class="input-group">
             <span class="input-group-btn">
                 <span class="btn btn-primary btn-file ">
-                    Browse&hellip; <input name="'.$name.'" type="file" '.($multiple ? 'multiple' : '').'>
+                    浏览文件&hellip; <input name="'.$name.'" type="file" '.($multiple ? 'multiple' : '').'>
                 </span>
             </span>
             <input type="text" class="form-control" readonly>

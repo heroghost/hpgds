@@ -15,22 +15,22 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">
                     <i class="ico-question"></i>
-                    创建问题</h3>
+                    创建调查问题</h3>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label for="question-title" class="required">
-                        问题
+                        问题名称
                     </label>
                     {!! Form::text('title', '', [
                         'id' => 'question-title',
                         'class' => 'form-control',
-                        'placeholder' => 'e.g. Please enter your full address?',
+                        'placeholder' => '例如：请填写完整地址？',
                     ]) !!}
                 </div>
                 <div class="form-group">
                     <label for="question-type">
-                        问题类型
+                        选择方式
                     </label>
 
                     <select id="question-type" class="form-control" name="question_type_id"
@@ -45,7 +45,7 @@
 
 
                 <fieldset id="question-options" class="hide">
-                    <h4>问题选项</h4>
+                    <h4>问题可选项</h4>
                     <table class="table table-bordered table-condensed">
                         <tbody>
                         <tr>
@@ -77,7 +77,7 @@
                 </div>
 
                 <h4>
-                    购票必答:
+                    选择问题的门票:
                 </h4>
                 <div class="form-group">
 

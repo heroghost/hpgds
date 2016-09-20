@@ -103,7 +103,7 @@ class EventSurveyController extends MyBaseController
 
         return response()->json([
             'status'      => 'success',
-            'message'     => 'Refreshing..',
+            'message'     => '恢复中..',
             'redirectUrl' => '',
         ]);
     }
@@ -182,7 +182,7 @@ class EventSurveyController extends MyBaseController
 
         return response()->json([
             'status'      => 'success',
-            'message'     => 'Refreshing..',
+            'message'     => '恢复中..',
             'redirectUrl' => '',
         ]);
 
@@ -209,7 +209,7 @@ class EventSurveyController extends MyBaseController
 
             return response()->json([
                 'status'      => 'success',
-                'message'     => 'Refreshing..',
+                'message'     => '恢复中..',
                 'redirectUrl' => '',
             ]);
         }
@@ -217,7 +217,7 @@ class EventSurveyController extends MyBaseController
         return response()->json([
             'status'  => 'error',
             'id'      => $question->id,
-            'message' => 'This question can\'t be deleted.',
+            'message' => '这个问题不能被删除！',
         ]);
     }
 
@@ -296,7 +296,7 @@ class EventSurveyController extends MyBaseController
         if ($question->save()) {
             return response()->json([
                 'status'  => 'success',
-                'message' => 'Question Successfully Updated',
+                'message' => '问题已成功更新',
                 'id'      => $question->id,
             ]);
         }
@@ -304,7 +304,7 @@ class EventSurveyController extends MyBaseController
         return response()->json([
             'status'  => 'error',
             'id'      => $question->id,
-            'message' => 'Whoops! Looks like something went wrong. Please try again.',
+            'message' => '客官！看起来好像出了什么问题。请再试一次。',
         ]);
     }
 
@@ -329,7 +329,7 @@ class EventSurveyController extends MyBaseController
 
         return response()->json([
             'status'  => 'success',
-            'message' => 'Question Order Successfully Updated',
+            'message' => '问题顺序成功更新',
         ]);
     }
 }

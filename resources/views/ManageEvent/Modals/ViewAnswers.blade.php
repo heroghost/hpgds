@@ -4,7 +4,7 @@
             <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">
-                   Q: {{ $question->title }}
+                   问题: {{ $question->title }}
                 </h3>
             </div>
 
@@ -14,13 +14,13 @@
                                <thead>
                                <tr>
                                    <th>
-                                       Attendee Details
+                                       参与者描述
                                    </th>
                                    <th>
-                                       Ticket
+                                       门票
                                    </th>
                                    <th>
-                                       Answer
+                                       答案
                                    </th>
                                </tr>
 
@@ -32,9 +32,9 @@
 
                                            {{ $answer->attendee->full_name }}
                                            @if($answer->attendee->is_cancelled)
-                                               (<span title="This attendee has been cancelled" class="text-danger">Cancelled</span>)
+                                               (<span title="This attendee has been cancelled" class="text-danger">取消</span>)
                                            @endif<br>
-                                           <a title="Go to attendee: {{ $answer->attendee->full_name }}" href="{{route('showEventAttendees', ['event_id' => $answer->attendee->event_id, 'q' => $answer->attendee->reference])}}">{{ $answer->attendee->email }}</a><br>
+                                           <a title="参与者: {{ $answer->attendee->full_name }}" href="{{route('showEventAttendees', ['event_id' => $answer->attendee->event_id, 'q' => $answer->attendee->reference])}}">{{ $answer->attendee->email }}</a><br>
 
                                        </td>
                                        <td>
@@ -52,14 +52,13 @@
             @else
                 <div class="modal-body">
                     <div class="alert alert-info">
-                        Sorry, there are no answers to this question yet.
+                        对不起，这个问题没有答案！
                     </div>
                 </div>
-
             @endif
 
             <div class="modal-footer">
-                {!! Form::button('Close', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
+                {!! Form::button('关闭', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
             </div>
         </div><!-- /end modal content-->
     </div>

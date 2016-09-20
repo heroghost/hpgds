@@ -6437,6 +6437,7 @@ function log() {
 		fullDayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
 		shortMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 		fullMonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    // fullMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
 		labels: null, /*{"year": "Year", "month": "Month", "day": "Day", "hour": "Hour", "minutes": "Minutes", "seconds": "Seconds", "meridiem": "Meridiem"}*/
 
 		minuteInterval: 1,
@@ -6445,13 +6446,13 @@ function log() {
 		secondsInterval: 1,
 		roundOffSeconds: true,
 	
-		titleContentDate: "Set Date",
-		titleContentTime: "Set Time",
-		titleContentDateTime: "Set Date & Time",
+		titleContentDate: "设置日期",
+		titleContentTime: "设置时间",
+		titleContentDateTime: "设置日期与时间",
 	
 		buttonsToDisplay: ["HeaderCloseButton", "SetButton", "ClearButton"],
-		setButtonContent: "Set",
-		clearButtonContent: "Clear",
+		setButtonContent: "设置",
+		clearButtonContent: "清除",
     	incrementButtonContent: "+",
     	decrementButtonContent: "-",
 		setValueInTextboxOnEveryClick: false,

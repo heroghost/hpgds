@@ -1,9 +1,8 @@
 @extends('Shared.Layouts.Master')
 
 @section('title')
-@parent
-
-Event Orders
+    @parent
+    活动订单
 @stop
 
 @section('top_nav')
@@ -16,9 +15,9 @@ Event Orders
 
 @section('page_title')
 <i class='ico-cart mr5'></i>
-Event Orders
+活动订单
 <span class="page_title_sub_title hide">
-    Showing 30 orders out of <b>{{\App\Models\Order::scope()->count()}}</b> Total
+    最多显示30个订单 <b>{{\App\Models\Order::scope()->count()}}</b> 订单数目
 </span>
 @stop
 
@@ -32,7 +31,7 @@ Event Orders
     <div class="btn-toolbar" role="toolbar">
         <div class="btn-group btn-group btn-group-responsive">
             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                <i class="ico-users"></i> Export <span class="caret"></span>
+                <i class="ico-users"></i>导出<span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="{{route('showExportOrders', ['event_id'=>$event->id,'export_as'=>'xlsx'])}}">Excel (XLSX)</a></li>
@@ -47,7 +46,7 @@ Event Orders
 <div class="col-md-3 col-sm-6">
    {!! Form::open(array('url' => route('showEventOrders', ['event_id'=>$event->id,'sort_by'=>$sort_by]), 'method' => 'get')) !!}
     <div class="input-group">
-        <input name='q' value="{{$q or ''}}" placeholder="Search Orders.." type="text" class="form-control">
+        <input name='q' value="{{$q or ''}}" placeholder="搜索订单.." type="text" class="form-control">
         <span class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="ico-search"></i></button>
         </span>
@@ -128,7 +127,7 @@ Event Orders
                             </td>
                             <td class="text-center">
                                 <a href="javascript:void(0);" data-modal-id="cancel-order-{{ $order->id }}" data-href="{{route('showCancelOrder', ['order_id'=>$order->id])}}" title="Cancel Order" class="btn btn-xs btn-danger loadModal">
-                                                Refund / Cancel
+                                                退款 / 取消
                                             </a>
                                 <a data-modal-id="view-order-{{ $order->id }}" data-href="{{route('showManageOrder', ['order_id'=>$order->id])}}" title="View Order" class="btn btn-xs btn-primary loadModal">Details</a>
                             </td>
