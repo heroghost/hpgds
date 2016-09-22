@@ -21,6 +21,7 @@ class OrganiserViewController extends Controller
     public function showOrganiserHome(Request $request, $organiser_id, $slug = '', $preview = false)
     {
         $organiser = Organiser::findOrFail($organiser_id);
+        // var_dump($organiser);exit;
 
         if(!$organiser->enable_organiser_page && !Utils::userOwns($organiser)) {
             abort(404);

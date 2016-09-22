@@ -3,13 +3,13 @@
         <div class="col-xs-12 col-md-8">
             @include('Public.ViewOrganiser.Partials.EventListingPanel',
                 [
-                    'panel_title' => 'Upcoming Events',
+                    'panel_title' => '即将的活动',
                     'events'      => $upcoming_events
                 ]
             )
             @include('Public.ViewOrganiser.Partials.EventListingPanel',
                 [
-                    'panel_title' => 'Past Events',
+                    'panel_title' => '以往的活动',
                     'events'      => $past_events
                 ]
             )

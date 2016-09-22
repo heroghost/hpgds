@@ -6433,10 +6433,10 @@ function log() {
 		maxDateTime: null,
 		minDateTime: null,
 	
-		shortDayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-		fullDayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-		shortMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-		fullMonthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+		shortDayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+		fullDayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+		shortMonthNames: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+		fullMonthNames: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     // fullMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
 		labels: null, /*{"year": "Year", "month": "Month", "day": "Day", "hour": "Hour", "minutes": "Minutes", "seconds": "Seconds", "meridiem": "Meridiem"}*/
 
@@ -8576,7 +8576,9 @@ $.cf = {
 							sDate = oFormattedDate.month + oDTP.settings.monthYearSeparator + oFormattedDate.yyyy;
 					}
 					else
-						sDate = oFormattedDate.dayShort + ", " + oFormattedDate.month + " " + oFormattedDate.dd + ", " + oFormattedDate.yyyy;
+						// sDate = oFormattedDate.dayShort + ", " + oFormattedDate.month + " " + oFormattedDate.dd + ", " + oFormattedDate.yyyy;
+            //Time show
+            sDate = oFormattedDate.yyyy + '年' + oFormattedDate.month + '月' + oFormattedDate.dd + '日' + oFormattedDate.dayShort;
 				}
 			}
 			if(oDTP.oData.bTimeMode || oDTP.oData.bDateTimeMode)
@@ -8639,6 +8641,8 @@ $.cf = {
 				else if(oDTP.oData.bTimeMode)
 					sDateTime = sTime;
 			}
+      console.log(sDateTime)
+
 
 			$(oDTP.element).find('.dtpicker-value').html(sDateTime);
 

@@ -24,7 +24,7 @@
                             {!! Form::text('title', $question->title, [
                                 'id' => 'question-title',
                                 'class' => 'form-control',
-                                'placeholder' => 'e.g.: What is your name?',
+                                'placeholder' => '例如：你的名字是什么？',
                             ]) !!}
                         </div>
                         <div class="form-group">

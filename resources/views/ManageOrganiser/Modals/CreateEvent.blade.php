@@ -16,7 +16,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             {!! Form::label('title', '活动标题', array('class'=>'control-label required')) !!}
-                            {!!  Form::text('title', Input::old('title'),array('class'=>'form-control','placeholder'=>'E.g: '.Auth::user()->first_name.'\'s International Conference' ))  !!}
+                            {!!  Form::text('title', Input::old('title'),array('class'=>'form-control','placeholder'=>'例如：'.Auth::user()->first_name.'\'s 乡村风光旅行' ))  !!}
                         </div>
 
                         <div class="form-group custom-theme">
@@ -67,11 +67,11 @@
 
                         </div>
                         <div class="form-group address-automatic">
-                            {!! Form::label('name', '场地名称', array('class'=>'control-label required ')) !!}
+                            {!! Form::label('name', '地点名称', array('class'=>'control-label required ')) !!}
                             {!!  Form::text('venue_name_full', Input::old('venue_name_full'),
                                         array(
                                         'class'=>'form-control geocomplete location_field',
-                                        'placeholder'=>'例如：螃蟹小屋'
+                                        'placeholder'=>'例如：北京天安门'
                                         ))  !!}
 
                                     <!--These are populated with the Google places info-->
@@ -100,24 +100,24 @@
                             </h5>
 
                             <div class="form-group">
-                                {!! Form::label('location_venue_name', '场地名称', array('class'=>'control-label required ')) !!}
+                                {!! Form::label('location_venue_name', '地点名称', array('class'=>'control-label required ')) !!}
                                 {!!  Form::text('location_venue_name', Input::old('location_venue_name'), [
                                         'class'=>'form-control location_field',
-                                        'placeholder'=>'E.g: The Crab Shack'
+                                        'placeholder'=>'例如：北京天安门'
                                         ])  !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('location_address_line_1', '地址线路1', array('class'=>'control-label')) !!}
                                 {!!  Form::text('location_address_line_1', Input::old('location_address_line_1'), [
                                         'class'=>'form-control location_field',
-                                        'placeholder'=>'E.g: 45 Grafton St.'
+                                        'placeholder'=>'例如：长安街45号'
                                         ])  !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('location_address_line_2', '地址线路2', array('class'=>'control-label')) !!}
                                 {!!  Form::text('location_address_line_2', Input::old('location_address_line_2'), [
                                         'class'=>'form-control location_field',
-                                        'placeholder'=>'例如：邓布林.'
+                                        'placeholder'=>'例如：长安街45号'
                                         ])  !!}
                             </div>
 
@@ -127,7 +127,7 @@
                                         {!! Form::label('location_state', '城市', array('class'=>'control-label')) !!}
                                         {!!  Form::text('location_state', Input::old('location_state'), [
                                                 'class'=>'form-control location_field',
-                                                'placeholder'=>'例如：邓布林.'
+                                                'placeholder'=>'例如：北京'
                                                 ])  !!}
                                     </div>
                                 </div>
@@ -136,7 +136,7 @@
                                         {!! Form::label('location_post_code', '邮编', array('class'=>'control-label')) !!}
                                         {!!  Form::text('location_post_code', Input::old('location_post_code'), [
                                                 'class'=>'form-control location_field',
-                                                'placeholder'=>'例如：邓布林.'
+                                                'placeholder'=>'例如：10001'
                                                 ])  !!}
                                     </div>
                                 </div>
@@ -146,9 +146,9 @@
                         <span>
                             <a data-clear-field=".location_field"
                                data-toggle-class=".address-automatic, .address-manual"
-                               data-show-less-text="or <b>Select from existing venues</b>" href="javascript:void(0);"
+                               data-show-less-text="or <b>从已有地址中选择</b>" href="javascript:void(0);"例如：例如：例如：
                                class="in-form-link show-more-options clear_location">
-                                or <b>手动输入地址</b>
+                                or <b>手动输入新地址</b>
                             </a>
                         </span>
 
@@ -196,7 +196,7 @@
                                             {!!  Form::text('organiser_facebook', Input::old('organiser_facebook'),
                                                 array(
                                                 'class'=>'form-control ',
-                                                'placeholder'=>'E.g http://www.facebook.com/MyFaceBookPage'
+                                                'placeholder'=>'例如：http://www.facebook.com/MyFaceBookPage'
                                                 ))  !!}
 
                                         </div>
@@ -207,7 +207,7 @@
                                             {!!  Form::text('organiser_twitter', Input::old('organiser_twitter'),
                                                 array(
                                                 'class'=>'form-control ',
-                                                'placeholder'=>'E.g http://www.twitter.com/MyTwitterPage'
+                                                'placeholder'=>'例如：http://www.twitter.com/MyTwitterPage'
                                                 ))  !!}
 
                                         </div>
@@ -241,7 +241,7 @@
             </div>
             <div class="modal-footer">
                 <span class="uploadProgress"></span>
-                {!! Form::button('Cancel', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
+                {!! Form::button('取消', ['class'=>"btn modal-close btn-danger",'data-dismiss'=>'modal']) !!}
                 {!! Form::submit('创建活动', ['class'=>"btn btn-success"]) !!}
             </div>
         </div>

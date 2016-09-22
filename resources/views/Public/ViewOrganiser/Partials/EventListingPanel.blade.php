@@ -23,8 +23,8 @@
                             </h2>
                             <p class="desc ellipsis">{{ $event->venue_name }}</p>
                             <ul>
-                                <li style="width:50%;"><a href="{{$event->event_url }}">Tickets</a></li>
-                                <li style="width:50%;"><a href="{{$event->event_url }}">Information</a></li>
+                                <li style="width:50%;"><a href="{{$event->event_url }}">售票处</a></li>
+                                <li style="width:50%;"><a href="{{$event->event_url }}">询问处</a></li>
                             </ul>
                         </div>
                     </li>

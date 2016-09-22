@@ -26,8 +26,8 @@ class MyBaseController extends Controller
             /*
              * @todo These should be user selectable
              */
-           'DateFormat'          => 'dd-MM-yyyy',
-           'DateTimeFormat'      => 'dd-MM-yyyy hh:mm',
+           'DateFormat'          => 'yyyy-MM-dd',
+           'DateTimeFormat'      => 'yyyy-MM-dd hh:mm',
            'GenericErrorMessage' => 'Whoops! An unknown error has occurred. Please try again or contact support if the problem persists.'
         ]);
 

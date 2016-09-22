@@ -6,11 +6,11 @@
 @stop
 
 @section('blankslate-title')
-    No Orders Yet
+    没有订单
 @stop
 
 @section('blankslate-text')
-    New orders will appear here as they are created.
+    最新订单将显示在此处。
 @stop
 
 @section('blankslate-body')
